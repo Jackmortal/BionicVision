@@ -1,0 +1,4 @@
+#Required Libraries
+
+opencv-python
+tensorflow
