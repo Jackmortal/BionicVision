@@ -2,6 +2,6 @@ import cv2 as cv
 
 img = cv.imread('Bill.jpg')
 
-cv.imshow('Bill', img)
+cv.imwrite('Bill_copy.jpg', img)
 
 cv.waitKey(0)
