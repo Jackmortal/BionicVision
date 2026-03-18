@@ -1,13 +1,7 @@
 import cv2 as cv
 
-video = cv.VideoCapture(1, cv.CAP_V4L2)
-print("Opened:", video.isOpened())
-
-isTrue, frame = video.read()
-print("Frame read:", isTrue)
-if isTrue:
-    print("Frame shape:", frame.shape)
-    cv.imwrite("test.jpg", frame)
-    print("Saved test.jpg")
-
-video.release()
+for i in [0, 1, 2, 3, 4, 5, 6, 7]:
+    video = cv.VideoCapture(i, cv.CAP_V4L2)
+    isTrue, frame = video.read()
+    print(f"video{i} - Opened: {video.isOpened()}, Frame read: {isTrue}")
+    video.release()
