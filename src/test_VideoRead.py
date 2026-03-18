@@ -5,6 +5,9 @@ capture = cv.VideoCapture('ShortVideo.mp4')
 while True:
     isTrue, frame = capture.read()
 
+    if not isTrue:
+        break
+
     cv.imshow('Video', frame)
 
     if cv.waitKey(20) & 0xFF == ord('d'):
