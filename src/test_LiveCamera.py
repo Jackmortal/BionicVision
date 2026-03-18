@@ -1,6 +1,6 @@
 import cv2 as cv
 
-video = cv.VideoCapture(0, cv.CAP_V4L2)
+video = cv.VideoCapture(1, cv.CAP_V4L2)
 print("Opened:", video.isOpened())
 
 isTrue, frame = video.read()
