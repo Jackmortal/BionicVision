@@ -1,7 +1,16 @@
+from picamera2 import Picamera2
 import cv2 as cv
 
-for i in [0, 1, 2, 3, 4, 5, 6, 7]:
-    video = cv.VideoCapture(i, cv.CAP_V4L2)
-    isTrue, frame = video.read()
-    print(f"video{i} - Opened: {video.isOpened()}, Frame read: {isTrue}")
-    video.release()
+picam2 = Picamera2()
+picam2.start()
+
+while True:
+    frame = picam2.capture_array()
+    
+    cv.imshow('Live', frame)
+
+    if cv.waitKey(20) & 0xFF == ord('d'):
+        break
+
+picam2.stop()
+cv.destroyAllWindows()
