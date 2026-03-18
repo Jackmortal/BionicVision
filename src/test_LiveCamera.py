@@ -1,6 +1,6 @@
 import cv2 as cv
 
-video = cv.VideoCapture(0)
+video = cv.VideoCapture(0, cv.CAP_V4L2) # Opens the default camera (0) using the V4L2 backend.
 
 while True:
     isTrue, frame = video.read()
